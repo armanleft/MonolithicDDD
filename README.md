@@ -8,4 +8,9 @@ And big complex projects face with issues that my sample make those issues more 
 
 <h4>What should you have done before?</h4>
 I considered that you had analyzed your own Domain, you had got to conclusion what are your main aggregates, and now you want to code them. In this project I try to reduce the minimum size of using libraries as MediatR or StructureMap. I will try to handle the problems as I reached them, but not before.
-<img src="https://drive.google.com/file/d/1dt92fDG-qYZNU6arMX0oeuIsZT4cAPtO/view?usp=sharing">
+
+<h4>Architecture</h4>
+Let's have a glance at my architecture:<br/>
+<img src="https://i.ibb.co/rmw8Kjv/Dependencies-Graph.png" alt="Dependencies-Graph" border="1"></br>
+
+I will explain what I have done in a Medium article Later
