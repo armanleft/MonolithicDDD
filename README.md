@@ -13,4 +13,10 @@ I considered that you had analyzed your own Domain, you had got to conclusion wh
 Let's have a glance at my architecture:<br/>
 <img src="https://i.ibb.co/rmw8Kjv/Dependencies-Graph.png" alt="Dependencies-Graph" border="1"></br>
 
-I will explain what I have done in a Medium article Later
+
+In presentation layer users make a request through the WebApi controller.</br>
+(You can add several projects to this layer, forexample a mvc project for viewing on web, an api for mobile app and others. If you want to fully achive CQRS then you can seprate your read and write methods into diffrent projects. If you want to have better management on your controllers (like diffrent versions) it's better you take Json as a parameter and serialize that in FacedeService.) </br>
+The Controller give the request to the proper method on FacadeGatewayService, this service create proper command or commands and give them to the application layer, recive the result and convert them into whatever result you have in your mind.
+The application call domain and repository as needed.
+
+This is Write Side of project
