@@ -1,9 +1,9 @@
-﻿using MongoDB.Driver;
-
-namespace Persistence.DbContexts
-{
-    public interface IMongoDbContext
-    {
-        IMongoCollection<TEntity> GetTEntityCollection<TEntity>();
-    }
-}
+﻿// using MongoDB.Driver;
+//
+// namespace Persistence.DbContexts
+// {
+//     public interface IMongoDbContext
+//     {
+//         IMongoCollection<TEntity> GetTEntityCollection<TEntity>();
+//     }
+// }

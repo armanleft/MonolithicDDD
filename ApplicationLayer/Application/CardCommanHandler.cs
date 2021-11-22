@@ -1,10 +1,10 @@
-﻿using System;
-using Application.Contracts;
+﻿using Application.Contracts;
 using Domain.Contract;
-using Domain.Contract.Models.Cards;
-using Presentation.Contract.CommandDtos;
-using System.Threading.Tasks;
 using Domain.Contract.Models;
+using Domain.Contract.Models.Cards;
+using Presentation.Contract.CommandDtos.Cards;
+using System;
+using System.Threading.Tasks;
 
 namespace Application
 {
@@ -29,15 +29,28 @@ namespace Application
 
         #region Handle Methods
 
-        public async Task<Guid> HandleAsync(CreateCardCommand request)
+        public async Task<string> HandleAsync(CreateCardCommand command)
         {
             var builder = _factory.GetInstance<ICardBuilder>();
-            builder.WithValue(request.Value);
+            builder.WithValue(command.Value);
             var card = builder.Build();
 
             await _repository.CreateAsync(card);
 
-            return card.Id;
+            return "";
+        }
+
+        public async Task HandleAsync(UpdateCardCommand command)
+        {
+            var card = await _repository.GetByIdAsync(command.Id);
+            card.Update(command.Value);
+
+            await _repository.UpdateAsync(card);
+        }
+
+        public async Task HandleAsync(DeleteCardCommand command)
+        {
+            await _repository.DeleteAsync(command.Id);
         }
 
         #endregion

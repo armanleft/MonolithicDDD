@@ -1,8 +1,8 @@
-﻿using System;
-using Presentation.Contract.CommandDtos;
+﻿using Application.Contracts;
+using Presentation.Contract.CommandDtos.Cards;
 using Presentation.Contract.FacadeGatewayInterfaces;
+using System;
 using System.Threading.Tasks;
-using Application.Contracts;
 
 namespace FacadeGateway
 {
@@ -25,10 +25,20 @@ namespace FacadeGateway
 
         #region Public Methods
 
-        public async Task<Guid> Create(string value)
+        public Task<string> Create(CreateCardCommand command)
         {
-            var command = new CreateCardCommand {Value = value};
-            return await _handler.HandleAsync(command);
+            //TODO: Check the validation here
+            return _handler.HandleAsync(command);
+        }
+
+        public async Task Update(UpdateCardCommand command)
+        {
+            await _handler.HandleAsync(command);
+        }
+
+        public async Task Delete(string id)
+        {
+            await _handler.HandleAsync(new DeleteCardCommand());
         }
 
         #endregion

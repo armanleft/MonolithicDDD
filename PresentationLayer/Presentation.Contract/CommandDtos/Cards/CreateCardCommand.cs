@@ -1,4 +1,4 @@
-﻿namespace Presentation.Contract.CommandDtos
+﻿namespace Presentation.Contract.CommandDtos.Cards
 {
     public class CreateCardCommand
     {

@@ -1,9 +1,7 @@
 ﻿using Domain.Contract;
-using Domain.Contract.Models;
-using Domain.Models;
-using System;
 using Domain.Contract.Models.Cards;
 using Domain.Models.Cards;
+using System;
 
 namespace Domain
 {

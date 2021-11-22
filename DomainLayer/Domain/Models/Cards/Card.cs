@@ -18,5 +18,14 @@ namespace Domain.Models.Cards
         }
 
         #endregion
+
+        #region Public Methods
+
+        public void Update(string value)
+        {
+            Value = value;
+        }
+
+        #endregion
     }
 }

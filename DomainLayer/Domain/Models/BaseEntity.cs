@@ -15,7 +15,7 @@ namespace Domain.Models
 
         protected BaseEntity()
         {
-            Id = Guid.NewGuid();
+            Id = new Guid();
         }
 
         #endregion

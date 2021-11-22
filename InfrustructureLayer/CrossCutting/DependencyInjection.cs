@@ -5,7 +5,7 @@ using Domain.Contract;
 using Domain.Contract.Models;
 using FacadeGateway;
 using Microsoft.Extensions.DependencyInjection;
-using Persistence.DbContexts;
+//using Persistence.DbContexts;
 using Persistence.Repositories;
 using Presentation.Contract.FacadeGatewayInterfaces;
 using StructureMap;
@@ -23,7 +23,7 @@ namespace CrossCutting
             services.AddScoped<ICardCommandHandler, CardCommandHandler>();
             services.AddScoped<IDomainFactory, DomainFactory>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(MongoRepository<>));
-            services.AddScoped<IMongoDbContext, MongoDbContext>();
+            //services.AddScoped<IMongoDbContext, MongoDbContext>();
 
             container.Populate(services);
             return container.GetInstance<IServiceProvider>();

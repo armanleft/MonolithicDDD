@@ -3,5 +3,6 @@
     public interface ICard : IBaseEntity
     {
         public string Value { get; set; }
+        void Update(string value);
     }
 }
